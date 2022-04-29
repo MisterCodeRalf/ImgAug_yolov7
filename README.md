@@ -31,6 +31,7 @@ Class numbers are zero-indexed (start from 0).
 * Geometric Transformations¶
 * Random Occlusion
 * Deep Learning based Approaches (experimental)
+        
         Suggested Labeling for TTA
         gaussian noise: _GN
         localvar noise: _LN
