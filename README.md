@@ -5,10 +5,11 @@ Prerequisites
 They are the same as YOLOv5, but make sure you have already installed them.
 
 Recall: YOLOv5 requires the dataset to be in the darknet format. Here’s an outline of what it looks like:
-One txt with labels file per image
-One row per object
-Each row is class x_center y_center width height format.
-Box coordinates must be in normalized xywh format (from 0 - 1). If your boxes are in pixels, divide x_center and width by image width, and y_center and height by image height.
+- One txt with labels file per image
+- One row per object
+- Each row is class x_center y_center width height format.
+- Box coordinates must be in normalized xywh format (from 0 - 1). If your boxes are in pixels, divide x_center and width by image width, and y_center and height by image height.
+
 Class numbers are zero-indexed (start from 0).
     Example:
     
