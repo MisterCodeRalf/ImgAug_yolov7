@@ -24,3 +24,28 @@ Class numbers are zero-indexed (start from 0).
     𝑦𝑐𝑒𝑛𝑡𝑒𝑟=𝑦𝑚𝑖𝑛/ℎ𝑒𝑖𝑔ℎ𝑡+𝑏𝑏𝑜𝑥ℎ𝑒𝑖𝑔ℎ𝑡/2=0.032342657342657344 
     category_idx=2
     Final result: 2 0.9316608996539792 0.032342657342657344 0.07785467128027679 0.029720279720279717
+
+## some functions:
+* Data Reading and Storage Functions
+* Photometric Transformations
+* Geometric Transformations¶
+* Random Occlusion
+* Deep Learning based Approaches (experimental)
+        Suggested Labeling for TTA
+        gaussian noise: _GN
+        localvar noise: _LN
+        poisson noise: _PN
+        salt noise: _SN
+        pepper noise: _PP
+        salt&pepper: _SP
+        speckle noise:_SE
+        gray: _GR
+        Histogram Equalization: _HE
+        shear x: _SX
+        shear y: _SY
+        flip lr: _LR
+        flip ud: _UD
+        rotation 90: _R90
+        rotation 180: _R180
+        rotation 270: _R270
+        random erasing: img _RE
