@@ -1,0 +1,10 @@
+gitpython
+ipython  # interactive notebook
+matplotlib
+numpy
+opencv-python
+opencv-contrib-python
+scikit-learn
+scikit-image
+tqdm
+
