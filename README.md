@@ -49,5 +49,8 @@ run only once per dataset! otherwise the augmentation will be applied to the alr
 python3 AUG.py
 ```
 
-
+## to leave environment:
+```bat
+deactivate
+```
 
