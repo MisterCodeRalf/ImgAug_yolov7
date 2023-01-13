@@ -175,17 +175,17 @@ def rotate(labels_len, new_name, img, mode):
         lbl, a, b, bbox_width, bbox_height = xml2dim(new_labels_)  # lbl, a, b, bbox_width, bbox_height
         h, w, _ = img.shape
         if mode == 0:
-            rot_img = cv2.rotate(img, cv2.cv2.ROTATE_90_COUNTERCLOCKWISE)
+            rot_img = cv2.rotate(img, cv2.ROTATE_90_COUNTERCLOCKWISE)
             x1, y1 = np.round_((b - bbox_height / 2) * h, 0), np.round_((1 - a - bbox_width / 2) * w, 0)
             x2, y2 = np.round_((b + bbox_height / 2) * h, 0), np.round_((1 - a + bbox_width / 2) * w, 0)
         elif mode == 1:
-            rot_img = cv2.rotate(img, cv2.cv2.ROTATE_180)
+            rot_img = cv2.rotate(img, cv2.ROTATE_180)
             a = 1 - a
             b = 1 - b
             x1, y1 = np.round_((a - bbox_width / 2) * w, 0), np.round_((b - bbox_height / 2) * h, 0)
             x2, y2 = np.round_((a + bbox_width / 2) * w, 0), np.round_((b + bbox_height / 2) * h, 0)
         elif mode == 2:
-            rot_img = cv2.rotate(img, cv2.cv2.ROTATE_90_CLOCKWISE)
+            rot_img = cv2.rotate(img, cv2.ROTATE_90_CLOCKWISE)
             x1, y1 = np.round_((1 - b - bbox_height / 2) * h, 0), np.round_((a - bbox_width / 2) * w, 0)
             x2, y2 = np.round_((1 - b + bbox_height / 2) * h, 0), np.round_((a + bbox_width / 2) * w, 0)
         else:
