@@ -53,7 +53,7 @@ labels_directory = 'test_aug/labels/train'
 ```
 ## Run
 
-run only once per dataset! otherwise the augmentation will be applied to the already augmented files again.
+run only once per dataset! otherwise the augmentation will be applied to the already augmented files again. On a modern computer it takes approx. 1 sec per image to get the enhanced versions for each image of the test set. Be prepared to wait if you have a huge number of images.
 
 ```bat
 python3 AUG.py
