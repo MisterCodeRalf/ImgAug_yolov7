@@ -1,5 +1,7 @@
-﻿# ImgAug_yolov5
+﻿# ImgAug_yolov7
 ## This approach uses Data Augmentation to generate new samples given a training/validation dataset without the Keras Augmentation.
+
+this is a fork of ZhuJD-China/ImgAug_yolov5
 
 Prerequisites
 They are the same as YOLOv5, but make sure you have already installed them.
@@ -30,23 +32,22 @@ Class numbers are zero-indexed (start from 0).
 * Photometric Transformations
 * Geometric Transformations¶
 * Random Occlusion
-* Deep Learning based Approaches (experimental)
-        
-        Suggested Labeling for TTA
-        gaussian noise: _GN
-        localvar noise: _LN
-        poisson noise: _PN
-        salt noise: _SN
-        pepper noise: _PP
-        salt&pepper: _SP
-        speckle noise:_SE
-        gray: _GR
-        Histogram Equalization: _HE
-        shear x: _SX
-        shear y: _SY
-        flip lr: _LR
-        flip ud: _UD
-        rotation 90: _R90
-        rotation 180: _R180
-        rotation 270: _R270
-        random erasing: img _RE
+
+## Build virtual environment:
+```bat
+python -m venv ./venv
+source ./venv/bin/activate
+pip install -r requirements.txt
+```
+## Run
+define the directory for the images and the annotations in the file at the appropriate line.
+in the actual versin the images and the annotations might be in the same directory.
+
+run only once per dataset! otherwise the augmentation will be applied to the already augmented files again.
+
+```bat
+python3 AUG.py
+```
+
+
+
