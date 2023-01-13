@@ -11,13 +11,21 @@ import shutil
 from skimage.util import random_noise
 
 np.random.seed(42)
-import tensorflow_hub as hub
-import tensorflow as tf
+#import tensorflow_hub as hub
+#import tensorflow as tf
+
+#define here the location of the images and the annotation. in this version they might be in the same directory
+####################################################
+image_directory = 'test_aug/images/train'
+labels_directory = 'test_aug/labels/train'
+####################################################
 
 
 def read_files(img_dir, lbl_dir):
     lbls_dataset = []
-    images = os.listdir(img_dir)
+    #annotations and images might be in the same directory
+    files = os.listdir(img_dir)
+    images = list(filter(lambda x: ('.jpg' in x) or ('.png' in x) , files)) #modify if other image formats are present
     img_names = []
     for i, image_name in enumerate(tqdm(images)):  # Load images and labels from source
         img_names.append(image_name)
@@ -286,8 +294,7 @@ def rand_erasing(labels_len, new_name, img, mode):
     return im
 
 
-image_directory = 'test_aug/images/train'
-labels_directory = 'test_aug/labels/train'
+
 labels_dataset, image_names = read_files(image_directory, labels_directory)
 
 # pic_index = 0
@@ -295,7 +302,7 @@ for pic_index in range(len(image_names)):
     img = np.array(cv2.imread(image_directory + '/' + image_names[pic_index]))
     single_pic_name = image_names[pic_index].split('.')[0]
 
-    """增强"""
+    #enhance
     img_gnoise = (255 * random_noise(img, mode='gaussian', var=0.05 ** 2)).astype(np.uint8)
     cv2.imwrite(image_directory + "/" + single_pic_name + '_GN' + '.jpg', img_gnoise)
     name_l = single_pic_name + '_GN' + '' + ".txt"
@@ -313,6 +320,7 @@ for pic_index in range(len(image_names)):
     img_r90 = rotate(len(labels_dataset[pic_index]), new_name, img, 0)  # rot_img, x1, x2, y1, y2 _R90
     cv2.imwrite(image_directory + "/" + single_pic_name + '_img_r90' + '.jpg', img_r90)
 
+    #activate if this is desired, might be very slow
     # new_name = single_pic_name + '_erasing' + '' + ".txt"
     # img_re = rand_erasing(len(labels_dataset[pic_index]), new_name, img, 1)  # img _RE
     # cv2.imwrite(image_directory + "/" + single_pic_name + '_erasing' + '.jpg', img_re)
