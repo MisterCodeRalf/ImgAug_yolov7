@@ -39,9 +39,19 @@ python -m venv ./venv
 source ./venv/bin/activate
 pip install -r requirements.txt
 ```
-## Run
+## Run preparation
 define the directory for the images and the annotations in the file at the appropriate line.
 in the actual versin the images and the annotations might be in the same directory.
+
+in the AUG.py file:
+```bat
+#define here the location of the images and the annotation. in this version they might be in the same directory
+####################################################
+image_directory = 'test_aug/images/train'
+labels_directory = 'test_aug/labels/train'
+####################################################
+```
+## Run
 
 run only once per dataset! otherwise the augmentation will be applied to the already augmented files again.
 
