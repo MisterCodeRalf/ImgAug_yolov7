@@ -35,7 +35,7 @@ Class numbers are zero-indexed (start from 0).
 
 ## Build virtual environment:
 ```bat
-python -m venv ./venv
+python3 -m venv ./venv
 source ./venv/bin/activate
 pip install -r requirements.txt
 ```
